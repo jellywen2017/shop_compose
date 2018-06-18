@@ -1,0 +1,16 @@
+version: '2.1'
+services:
+    jelly-shop-prod:
+        container_name: jelly-shop-prod
+        restart: always
+        image: jellywen/centos7-php7-nginx:v1.1
+        entrypoint: /start.sh
+        hostname: jelly-shop-prod
+        ports:
+             - "88:80"
+             - "2002:22"
+        volumes:
+            - ./web/nginx_prod.conf:/usr/local/nginx/conf/nginx.conf
+            - ./web/start_prod.sh:/start.sh
+            - ./web/composer.phar:/usr/local/bin/composer
+            - /data/docker/jelly_shop/:/data/www/

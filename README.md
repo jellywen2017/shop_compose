@@ -1,2 +1,6 @@
 # shop_compose
-商城
+个人商城
+复用web_compose redis and mysql
+
+
+
